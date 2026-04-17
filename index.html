@@ -1,172 +1,875 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The End of the Sixth Day • A Theory of Everything</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The End of the 6th Day | A Theory of Everything</title>
+  <meta name="description" content="The End of the 6th Day: A Theory of Everything explores simulation theory, biblical prophecy, consciousness, entropy, and the approaching Sabbath age." />
+  <meta name="keywords" content="The End of the 6th Day, theory of everything, simulation theory, biblical prophecy, consciousness, Thomas Campbell, My Big TOE, end times, spiritual awakening" />
+  <meta name="author" content="Zach" />
+  <meta property="og:title" content="The End of the 6th Day | A Theory of Everything" />
+  <meta property="og:description" content="A bold framework uniting simulation theory, scripture, consciousness, and prophecy into one sweeping explanation of reality." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta name="theme-color" content="#0b0d12" />
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .hero-bg { 
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
-                  url('https://picsum.photos/id/1015/2000/1200') center/cover; 
+    :root {
+      --bg: #0b0d12;
+      --bg-soft: #121722;
+      --panel: #171d2b;
+      --panel-2: #1d2434;
+      --text: #f3f5f8;
+      --muted: #b5becd;
+      --line: rgba(255,255,255,0.12);
+      --gold: #d3b26a;
+      --gold-soft: #f0dfb2;
+      --red: #a9252a;
+      --glow: rgba(211, 178, 106, 0.18);
+      --max: 1160px;
+      --radius: 20px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.38);
     }
-    .glow { text-shadow: 0 0 20px rgb(59 130 246); }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(169,37,42,0.14), transparent 0 35%),
+        radial-gradient(circle at 80% 30%, rgba(211,178,106,0.10), transparent 0 28%),
+        linear-gradient(180deg, #090b10 0%, #0c1018 45%, #0b0d12 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--gold-soft);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.06;
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+
+    .section-lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 10, 15, 0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+
+    .brand-top {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+
+    .brand-main {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(211, 178, 106, 0.35);
+      background: linear-gradient(180deg, rgba(211,178,106,0.16), rgba(211,178,106,0.06));
+      color: var(--gold-soft);
+      transition: 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      border-color: rgba(211, 178, 106, 0.6);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.24);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 7rem 0 5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.9rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      margin: 0 0 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 .gold {
+      color: var(--gold-soft);
+    }
+
+    .hero p {
+      font-size: 1.16rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 0 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--gold), #b18c4c);
+      color: #111;
+      box-shadow: 0 16px 30px var(--glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 42px rgba(211, 178, 106, 0.28);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 28px;
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .book-shell {
+      border-radius: 22px;
+      min-height: 560px;
+      padding: 2rem;
+      background:
+        linear-gradient(180deg, rgba(211,178,106,0.08), rgba(255,255,255,0.02)),
+        linear-gradient(135deg, #121725 0%, #0f131d 60%, #0a0d14 100%);
+      border: 1px solid rgba(211,178,106,0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-shell::before {
+      content: "";
+      position: absolute;
+      inset: auto -60px -60px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(169,37,42,0.22), transparent 62%);
+      pointer-events: none;
+    }
+
+    .book-topline {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.72rem;
+      color: var(--gold-soft);
+    }
+
+    .book-title {
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      line-height: 0.95;
+      margin: 1rem 0;
+    }
+
+    .book-sub {
+      color: var(--muted);
+      max-width: 28ch;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .book-quote {
+      margin-top: 2rem;
+      padding: 1rem 1.1rem 0 1.1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 1.02rem;
+      color: var(--gold-soft);
+    }
+
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--gold-soft);
+      margin-bottom: 0.3rem;
+    }
+
+    section {
+      padding: 5.4rem 0;
+    }
+
+    .cards-3,
+    .cards-4 {
+      display: grid;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 0.7rem;
+      font-size: 1.22rem;
+      color: var(--gold-soft);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .belief-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.4rem;
+      margin-top: 2rem;
+    }
+
+    .manifesto {
+      background: linear-gradient(180deg, rgba(169,37,42,0.10), rgba(255,255,255,0.03));
+      border: 1px solid rgba(169,37,42,0.22);
+      border-radius: 24px;
+      padding: 1.7rem;
+      box-shadow: var(--shadow);
+    }
+
+    .manifesto p {
+      margin: 0 0 1rem;
+      color: var(--text);
+      font-size: 1.08rem;
+    }
+
+    .manifesto p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote-wall {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 1.3rem 1.25rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(255,255,255,0.04);
+      border-radius: 0 18px 18px 0;
+      color: var(--text);
+      font-size: 1.06rem;
+      box-shadow: var(--shadow);
+    }
+
+    blockquote span {
+      display: block;
+      margin-top: 0.8rem;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.72rem;
+      color: var(--gold-soft);
+    }
+
+    .timeline {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1.15rem 1.2rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .timeline-item .phase {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-soft);
+      padding-top: 0.2rem;
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 0.35rem;
+      font-size: 1.15rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      padding-bottom: 6.5rem;
+    }
+
+    .cta-panel {
+      background:
+        radial-gradient(circle at top right, rgba(211,178,106,0.14), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cta-panel p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0.9rem auto 0;
+      font-size: 1.05rem;
+    }
+
+    .cta-note {
+      margin-top: 1.1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      color: var(--gold-soft);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 1.6rem 0 2.8rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .soft {
+      color: var(--muted);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .belief-grid,
+      .cards-3,
+      .cards-4,
+      .quote-wall {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-wrap: wrap;
+        padding: 0.9rem 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding-top: 5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 13vw, 4rem);
+      }
+
+      .book-shell {
+        min-height: auto;
+      }
+
+      .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+      }
+    }
   </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200">
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="The End of the 6th Day home">
+        <span class="brand-top">A Theory of Everything</span>
+        <span class="brand-main">The End of the 6th Day</span>
+      </a>
 
-  <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">6</div>
-        <span class="font-bold text-2xl tracking-tight">End of the 6th Day</span>
-      </div>
-      <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#about" class="hover:text-blue-400 transition">About</a>
-        <a href="#chapters" class="hover:text-blue-400 transition">Chapters</a>
-        <a href="#author" class="hover:text-blue-400 transition">Author</a>
-        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-      </div>
-      <a href="#buy" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-sm font-semibold transition">Get the Book</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#thesis">The Thesis</a>
+        <a href="#why">Why It Matters</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#timeline">The Timeline</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="#read">Start Here</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center pt-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6 glow">
-        THE END OF THE<br>SIXTH DAY
-      </h1>
-      <p class="text-2xl md:text-3xl text-zinc-400 mb-8">A Theory of Everything</p>
-      <p class="text-xl text-zinc-500 max-w-2xl mx-auto mb-12">
-        Ancient scripture meets simulation theory.<br>Where code, consciousness, and the Codemaker converge.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#about" class="bg-white text-zinc-900 px-10 py-4 rounded-full font-semibold text-lg hover:bg-zinc-200 transition">Read the Preview</a>
-        <a href="#contact" class="border border-zinc-400 hover:border-white px-10 py-4 rounded-full font-semibold text-lg transition">Get in Touch</a>
-      </div>
-      <div class="mt-16 text-sm text-zinc-500">by Zachary W. Speegle</div>
-    </div>
-  </section>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Not just a book. A framework.</span>
+          <h1>
+            What if <span class="gold">scripture</span>,
+            <span class="gold">consciousness</span>,
+            and <span class="gold">simulation theory</span>
+            are all describing the same reality?
+          </h1>
+          <p>
+            <strong>The End of the 6th Day</strong> is a sweeping argument that humanity is living inside a designed reality,
+            moving toward a prophetic turning point, and waking up inside a story far bigger than modern materialism can explain.
+          </p>
+          <p>
+            This is not watered-down inspiration. It is a serious attempt to connect biblical structure, digital metaphysics,
+            entropy reduction, spiritual awakening, and the destiny of human consciousness into one coherent vision.
+          </p>
 
-  <!-- ABOUT THE BOOK -->
-  <section id="about" class="py-24 bg-zinc-900">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold mb-4">A New Lens on Reality</h2>
-        <p class="text-xl text-zinc-400">Bridging ancient wisdom and modern simulation theory</p>
-      </div>
-      
-      <div class="prose prose-invert max-w-none text-lg leading-relaxed">
-        <p class="mb-8">What if the world we experience is a sophisticated simulation — a soul-forge designed for growth, awakening, and reconciliation with the Source?</p>
-        <p class="mb-8">"The End of the Sixth Day" invites tech enthusiasts and spiritual seekers alike to explore how Genesis, quantum mechanics, The Matrix, and consciousness research might all be describing the same underlying reality.</p>
-        <p>Through metaphors of code, avatars, patches, and resets, this book presents a unifying framework: humanity stands at the close of the sixth day, on the threshold of a divine Sabbath reset.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 mt-16">
-        <div class="bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
-          <i class="fa-solid fa-brain text-4xl text-blue-500 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Consciousness First</h3>
-          <p class="text-zinc-400">Reality as information rendered by a Larger Consciousness System.</p>
-        </div>
-        <div class="bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
-          <i class="fa-solid fa-gamepad text-4xl text-blue-500 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Gamer's Gospel</h3>
-          <p class="text-zinc-400">Life as a purposeful quest with checkpoints and moral systems.</p>
-        </div>
-        <div class="bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
-          <i class="fa-solid fa-scroll text-4xl text-blue-500 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Divine Blueprint</h3>
-          <p class="text-zinc-400">Genesis as a 7,000-year build schedule ending in the Millennial Sabbath.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTERS TEASER -->
-  <section id="chapters" class="py-24 bg-black">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16">Explore the Chapters</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-8">
-          <div class="border-l-4 border-blue-600 pl-6">
-            <h4 class="font-semibold text-xl">1. Reality Check</h4>
-            <p class="text-zinc-400">Intuition, illusion, and the big question: Are we living in a simulation?</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#thesis">Explore the Thesis</a>
+            <a class="btn btn-secondary" href="#quotes">Read the Pull Quotes</a>
           </div>
-          <div class="border-l-4 border-blue-600 pl-6">
-            <h4 class="font-semibold text-xl">3. The Matrix Was a Documentary</h4>
-            <p class="text-zinc-400">Jesus as admin-level access and spiritual disclosure.</p>
-          </div>
-          <div class="border-l-4 border-blue-600 pl-6">
-            <h4 class="font-semibold text-xl">5. The Blueprint</h4>
-            <p class="text-zinc-400">Decoding Genesis as a millennial-day creation schedule.</p>
+
+          <div class="hero-strip">
+            <div class="hero-stat">
+              <strong>Reality</strong>
+              Examined as a designed system rather than a random accident.
+            </div>
+            <div class="hero-stat">
+              <strong>Scripture</strong>
+              Treated as structural revelation, not disposable mythology.
+            </div>
+            <div class="hero-stat">
+              <strong>Awakening</strong>
+              Presented as the central human task of this age.
+            </div>
           </div>
         </div>
-        <div class="space-y-8">
-          <div class="border-l-4 border-blue-600 pl-6">
-            <h4 class="font-semibold text-xl">7. The Codemaker</h4>
-            <p class="text-zinc-400">Jesus as the original Admin, Patch, and Root Access.</p>
-          </div>
-          <div class="border-l-4 border-blue-600 pl-6">
-            <h4 class="font-semibold text-xl">10. The End of the Sixth Day</h4>
-            <p class="text-zinc-400">Signs of the approaching system reset.</p>
-          </div>
-          <div class="border-l-4 border-blue-600 pl-6">
-            <h4 class="font-semibold text-xl">Epilogue • The Architect of Deception</h4>
-            <p class="text-zinc-400">Understanding evil as malware in a love-coded system.</p>
+
+        <div class="hero-card">
+          <div class="book-shell">
+            <div>
+              <div class="book-topline">Now entering the sixth day</div>
+              <h2 class="book-title">The End<br />of the<br />6th Day</h2>
+              <p class="book-sub">
+                A provocative theological and metaphysical synthesis for people who suspect
+                reality is more ordered, more alive, and more intentional than they were told.
+              </p>
+            </div>
+
+            <div class="book-quote">
+              “Ancient scripture, modern science, and digital metaphysics may be speaking the same truth in different languages.”
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- AUTHOR -->
-  <section id="author" class="py-24 bg-zinc-900">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="w-48 h-48 mx-auto mb-8 rounded-2xl overflow-hidden border-4 border-zinc-700">
-      </div>
-      <h2 class="text-4xl font-bold mb-4">Zachary W. Speegle</h2>
-      <p class="text-xl text-zinc-400 mb-8">U.S. Marine • Navy Chaplain • MBA + M.Div.</p>
-      <p class="max-w-2xl mx-auto text-zinc-300">
-        After serving as a United States Marine and later as a Navy Chaplain, Zachary combines rigorous academic training with deep spiritual insight to explore the convergence of science, scripture, and simulation theory.
-      </p>
-    </div>
-  </section>
+    <section id="thesis">
+      <div class="container">
+        <span class="eyebrow">The central claim</span>
+        <h2 class="section-title">A new map for the oldest questions</h2>
+        <p class="section-lead">
+          This book proposes that the universe is a purposeful simulation for soul development, that consciousness is more fundamental than matter,
+          and that the biblical timeline may be describing the architecture of history itself.
+        </p>
 
-  <!-- CONTACT FORM -->
-  <section id="contact" class="py-24 bg-black">
-    <div class="max-w-2xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-4">Let's Connect</h2>
-      <p class="text-center text-zinc-400 mb-12">Have questions about the book or want to discuss the ideas? Reach out.</p>
-      
-      <form id="contactForm" class="space-y-8">
-        <div class="grid md:grid-cols-2 gap-6">
-          <input type="text" placeholder="Your Name" class="bg-zinc-900 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500">
-          <input type="email" placeholder="Your Email" class="bg-zinc-900 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500">
+        <div class="cards-4">
+          <article class="card">
+            <h3>Reality is designed</h3>
+            <p>
+              The physical world behaves less like a closed machine and more like a rendered environment inside a larger intelligent system.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Consciousness is primary</h3>
+            <p>
+              Mind is not an accidental byproduct of matter. It is closer to the source code than the output.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Scripture encodes structure</h3>
+            <p>
+              Genesis and Revelation are not merely symbolic stories. They may be time architecture, system pattern, and prophetic sequence.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>History is approaching reset</h3>
+            <p>
+              Humanity may be nearing the close of the sixth day, on the edge of a Sabbath age long foreshadowed in biblical prophecy.
+            </p>
+          </article>
         </div>
-        <textarea placeholder="Your Message" rows="6" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500"></textarea>
-        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-5 rounded-2xl font-semibold text-lg transition">Send Message</button>
-      </form>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-zinc-950 border-t border-zinc-800 py-12">
-    <div class="max-w-6xl mx-auto px-6 text-center text-zinc-500 text-sm">
-      <p>© 2026 Zachary W. Speegle • The End of the Sixth Day</p>
-      <p class="mt-2">All rights reserved</p>
+        <div class="belief-grid">
+          <div class="manifesto">
+            <p><strong>This book argues that the deepest battle of our time is not political, technological, or economic.</strong></p>
+            <p>
+              It is metaphysical. It is a war over what reality is, what humanity is for, and whether truth can still break through a world saturated with illusion.
+            </p>
+            <p>
+              If reality is a designed learning system, then every soul matters. Every moral choice matters. Every awakening matters.
+            </p>
+          </div>
+
+          <div class="cards-3" style="margin-top: 0;">
+            <article class="card">
+              <h3>Thomas Campbell</h3>
+              <p>
+                Supplies the core digital-consciousness framework: reality as an information system built for entropy reduction and growth.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>The Matrix lens</h3>
+              <p>
+                Gives language to the tension between control and awakening, illusion and truth, system loyalty and liberation.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Biblical prophecy</h3>
+              <p>
+                Grounds the vision in a literal historical arc: six thousand years of labor, followed by a Sabbath millennium.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container">
+        <span class="eyebrow">Why people need this now</span>
+        <h2 class="section-title">Because the old categories no longer explain what people are experiencing</h2>
+        <p class="section-lead">
+          Many people sense that the official story of reality is too small. They feel the fracture between materialism and meaning,
+          between technology and soul, between religion and direct experience. This book steps into that fracture and names it.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>For the spiritually restless</h3>
+            <p>
+              For readers who cannot go back to shallow answers, but also cannot pretend the deepest biblical claims no longer matter.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>For the intellectually cornered</h3>
+            <p>
+              For people who see evidence of design, pattern, synchronicity, and consciousness yet refuse to turn their brains off.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>For the awake and the almost-awake</h3>
+            <p>
+              For those who feel history accelerating and suspect humanity is living at the edge of something far bigger than headlines.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes">
+      <div class="container">
+        <span class="eyebrow">Pull quotes</span>
+        <h2 class="section-title">Lines built to stay with you</h2>
+        <p class="section-lead">
+          These are the kinds of claims at the heart of <em>The End of the 6th Day</em>—designed to challenge assumptions and open the imagination.
+        </p>
+
+        <div class="quote-wall">
+          <blockquote>
+            Reality may be less like dead machinery and more like a living system of meaning, consequence, and design.
+            <span>The End of the 6th Day</span>
+          </blockquote>
+
+          <blockquote>
+            We did not stumble into existence by accident. We entered a world already structured for growth, testing, and awakening.
+            <span>The End of the 6th Day</span>
+          </blockquote>
+
+          <blockquote>
+            The Bible may not be primitive superstition surviving modernity. It may be the original architecture document.
+            <span>The End of the 6th Day</span>
+          </blockquote>
+
+          <blockquote>
+            If consciousness is upstream from matter, then human life is not cheap. It is the battlefield where eternity learns to choose.
+            <span>The End of the 6th Day</span>
+          </blockquote>
+
+          <blockquote>
+            What we call prophecy may be the Creator revealing the timing, logic, and intended direction of the system.
+            <span>The End of the 6th Day</span>
+          </blockquote>
+
+          <blockquote>
+            We may be living at the end of the sixth day—not at the end of meaning, but at the threshold of rest.
+            <span>The End of the 6th Day</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="container">
+        <span class="eyebrow">The prophetic framework</span>
+        <h2 class="section-title">The six-day pattern and the coming Sabbath</h2>
+        <p class="section-lead">
+          One of the book’s boldest claims is that the Genesis week is not only about creation’s beginning, but history’s structure:
+          six days of labor, then rest. Six thousand years of human toil, then a millennial reign.
+        </p>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="phase">Days 1–5</div>
+            <div>
+              <h4>The long construction of human history</h4>
+              <p>
+                Civilization advances, consciousness develops, rebellion grows, revelation unfolds, and humanity builds ever more powerful systems.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="phase">Day 6</div>
+            <div>
+              <h4>The age of technological acceleration and spiritual crisis</h4>
+              <p>
+                Humanity approaches godlike tools without godly wisdom, while the deepest truths of existence begin resurfacing through science, crisis, and awakening.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="phase">Threshold</div>
+            <div>
+              <h4>The end of the sixth day</h4>
+              <p>
+                This is the hinge point the book explores: the closing phase before a system-wide transition, judgment, correction, and renewal.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="phase">Day 7</div>
+            <div>
+              <h4>The Sabbath age</h4>
+              <p>
+                Revelation’s millennial reign is presented as the seventh day of history: rest, rule, restoration, and the reordering of creation under its rightful King.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="read" class="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <span class="eyebrow">Start here</span>
+          <h2 class="section-title" style="margin-bottom: 0.6rem;">This message is too important to stay buried</h2>
+          <p>
+            <strong>The End of the 6th Day</strong> is written for readers who know the world is not as simple as they were told.
+            It is for those who sense design, question illusion, take scripture seriously, and want a framework big enough to hold consciousness,
+            prophecy, technology, morality, and the future of humanity in one view.
+          </p>
+          <p class="cta-note">
+            Add your final purchase links, email signup, release date, or contact details here when ready.
+          </p>
+
+          <div class="hero-actions" style="justify-content: center; margin-top: 1.6rem;">
+            <a class="btn btn-primary" href="#top">Back to Top</a>
+            <a class="btn btn-secondary" href="about.html">Go to About Page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>
+        <strong>The End of the 6th Day</strong>
+        <span class="soft"> | A Theory of Everything</span>
+      </div>
+      <div class="footer-links">
+        <a href="#thesis">The Thesis</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#timeline">The Timeline</a>
+        <a href="about.html">About</a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert("Thank you! Your message has been received.");
-      this.reset();
-    });
-  </script>
 </body>
 </html>
