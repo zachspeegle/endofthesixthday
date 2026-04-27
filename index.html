@@ -20,16 +20,6 @@
             border: 1px solid rgba(232, 185, 35, 0.12);
         }
         
-        .neural-card {
-            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .neural-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 35px rgba(232, 185, 35, 0.18);
-        }
-
         .premium-btn {
             transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
@@ -47,7 +37,7 @@
     </style>
 </head>
 <body class="bg-[#0A0F2E] text-white overflow-x-hidden">
-    <!-- NAV (unchanged - working) -->
+    <!-- NAV -->
     <nav class="fixed top-0 left-0 right-0 z-[60] glass border-b border-white/10">
         <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
@@ -60,7 +50,6 @@
 
             <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                 <a href="#vision" class="nav-link">The Vision</a>
-                <a href="#framework" class="nav-link">The Framework</a>
                 <a href="#echoes" class="nav-link">Echoes</a>
                 <a href="book.html" class="nav-link font-semibold text-[#E8B923]">Read the Book</a>
                 <a href="newsletter.html" class="nav-link">Newsletter</a>
@@ -77,10 +66,10 @@
             </button>
         </div>
 
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-8 pb-6 glass border-t border-white/10">
             <div class="flex flex-col gap-y-4 pt-4 text-sm">
                 <a href="#vision" class="nav-link py-1">The Vision</a>
-                <a href="#framework" class="nav-link py-1">The Framework</a>
                 <a href="#echoes" class="nav-link py-1">Echoes</a>
                 <a href="book.html" class="nav-link py-1 font-semibold text-[#E8B923]">Read the Book (Free)</a>
                 <a href="newsletter.html" class="nav-link py-1">Newsletter</a>
@@ -89,7 +78,7 @@
         </div>
     </nav>
 
-    <!-- HERO (video working - no changes) -->
+    <!-- HERO -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden pt-16">
         <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted loop playsinline preload="auto">
             <source src="assets/6th-day-video.mp4" type="video/mp4">
@@ -123,68 +112,28 @@
         </div>
     </header>
 
-    <!-- THE VISION (unchanged) -->
+    <!-- THE VISION -->
     <section id="vision" class="max-w-screen-2xl mx-auto px-8 pt-24 pb-20">
         <div class="max-w-4xl mx-auto text-center mb-16">
             <div class="uppercase tracking-[3px] text-xs font-semibold text-[#E8B923] mb-3">THE CENTRAL CLAIM</div>
             <h2 class="heading-serif text-6xl md:text-7xl leading-none tracking-tighter">Humanity is waking up<br>inside a story far bigger<br>than we were told.</h2>
         </div>
-        <div class="max-w-3xl mx-auto prose prose-invert text-xl leading-relaxed text-white/90">
-            <p>The End of the 6th Day is a sweeping argument that humanity is living inside a designed reality, moving toward a prophetic turning point, and waking up inside a story far bigger than modern materialism can explain.</p>
-            <p class="mt-6">This is not watered-down inspiration. It is a serious attempt to connect biblical structure, digital metaphysics, entropy reduction, spiritual awakening, and the destiny of human consciousness into one coherent vision.</p>
-        </div>
-    </section>
-
-    <!-- THE FRAMEWORK - FIXED -->
-    <section id="framework" class="cosmic-bg py-24 border-t border-b border-white/10">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="text-center mb-16">
-                <div class="uppercase tracking-[3px] text-xs font-semibold text-[#E8B923]">THE PROPHETIC ARCHITECTURE</div>
-                <h2 class="heading-serif text-6xl tracking-tighter mt-3">The Six-Day Pattern</h2>
-                <p class="mt-4 max-w-lg mx-auto text-white/70">History itself appears to follow the biblical template of six days of labor followed by a Sabbath age of rest and revelation.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
-                <!-- 01-05 -->
-                <div class="neural-card glass rounded-3xl p-8 border border-white/10 min-h-[300px]">
-                    <div class="text-5xl font-light text-[#E8B923]/80 mb-4">01–05</div>
-                    <h4 class="font-semibold text-2xl mb-4">The Long Construction</h4>
-                    <p class="text-white/85 leading-relaxed flex-1">The foundational ages of human history — the slow building of consciousness, civilization, and the conditions for awakening.</p>
-                </div>
-                
-                <!-- 06 -->
-                <div class="neural-card glass rounded-3xl p-8 border border-white/10 min-h-[300px]">
-                    <div class="text-5xl font-light text-[#E8B923]/80 mb-4">06</div>
-                    <h4 class="font-semibold text-2xl mb-4">The Age of Acceleration</h4>
-                    <p class="text-white/85 leading-relaxed flex-1">Technological explosion, spiritual crisis, and the final intensification of the simulation. We are here now.</p>
-                </div>
-                
-                <!-- THRESHOLD - FIXED -->
-                <div class="neural-card glass rounded-3xl p-8 border border-[#E8B923]/50 bg-[#0A0F2E] min-h-[300px]">
-                    <div class="text-5xl font-light text-[#E8B923] mb-4">THRESHOLD</div>
-                    <h4 class="font-semibold text-2xl mb-4">The End of the Sixth Day</h4>
-                    <p class="text-white/90 leading-relaxed flex-1">The prophetic turning point. The moment the system reveals its purpose and the great reset of consciousness begins.</p>
-                    <div class="mt-auto pt-4">
-                        <div class="inline-block px-4 py-1 text-xs rounded-full bg-[#E8B923] text-[#0A0F2E] font-semibold">YOU ARE HERE</div>
-                    </div>
-                </div>
-                
-                <!-- 07 -->
-                <div class="neural-card glass rounded-3xl p-8 border border-white/10 min-h-[300px]">
-                    <div class="text-5xl font-light text-[#E8B923]/80 mb-4">07</div>
-                    <h4 class="font-semibold text-2xl mb-4">The Sabbath Age</h4>
-                    <p class="text-white/85 leading-relaxed flex-1">Rest. Revelation. The age of fulfilled purpose where the simulation completes its work and humanity steps into its true inheritance.</p>
-                </div>
+        
+        <div class="max-w-3xl mx-auto">
+            <div class="prose prose-invert text-xl leading-relaxed text-white/90">
+                <p>The End of the 6th Day is a sweeping argument that humanity is living inside a designed reality, moving toward a prophetic turning point, and waking up inside a story far bigger than modern materialism can explain.</p>
+                <p class="mt-6">This is not watered-down inspiration. It is a serious attempt to connect biblical structure, digital metaphysics, entropy reduction, spiritual awakening, and the destiny of human consciousness into one coherent vision.</p>
             </div>
         </div>
     </section>
 
-    <!-- ECHOES (unchanged) -->
+    <!-- ECHOES -->
     <section id="echoes" class="max-w-screen-2xl mx-auto px-8 py-24">
         <div class="text-center mb-16">
             <div class="uppercase tracking-[3px] text-xs font-semibold text-[#E8B923]">WHAT OTHERS ARE HEARING</div>
             <h2 class="heading-serif text-6xl tracking-tighter mt-3">Echoes from the Threshold</h2>
         </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <div class="glass p-10 rounded-3xl border border-white/10 text-xl leading-snug">Reality may be less like dead machinery and more like a living system of meaning, consequence, and design.</div>
             <div class="glass p-10 rounded-3xl border border-white/10 text-xl leading-snug">We did not stumble into existence by accident. We entered a world already structured for growth, testing, and awakening.</div>
@@ -193,7 +142,7 @@
         </div>
     </section>
 
-    <!-- AUTHOR (unchanged) -->
+    <!-- AUTHOR -->
     <section class="max-w-screen-2xl mx-auto px-8 pb-24">
         <div class="max-w-3xl mx-auto glass rounded-3xl p-16 border border-white/10 text-center">
             <div class="mx-auto w-24 h-24 rounded-full overflow-hidden ring-2 ring-[#E8B923]/30 mb-8">
@@ -205,7 +154,7 @@
         </div>
     </section>
 
-    <!-- READ THE BOOK (unchanged) -->
+    <!-- READ THE BOOK -->
     <section id="preorder" class="relative py-24 border-t border-white/10 cosmic-bg">
         <div class="max-w-4xl mx-auto px-8 text-center">
             <div class="mx-auto w-16 h-px bg-gradient-to-r from-transparent via-[#E8B923] to-transparent mb-8"></div>
@@ -222,7 +171,7 @@
         </div>
     </section>
 
-    <!-- NEWSLETTER - FIXED -->
+    <!-- NEWSLETTER -->
     <section class="max-w-screen-2xl mx-auto px-8 py-20 border-t border-white/10">
         <div class="max-w-xl mx-auto text-center">
             <div class="uppercase text-xs tracking-[3px] text-[#E8B923]">STAY AT THE THRESHOLD</div>
@@ -232,8 +181,7 @@
             <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input type="email" id="email-input" placeholder="your@email.com" 
                        class="flex-1 px-6 py-4 rounded-2xl bg-[#0C2538] border border-white/20 focus:border-[#E8B923] outline-none text-white placeholder:text-white/50">
-                <button type="submit" 
-                        class="premium-btn flex-shrink-0 min-w-[170px] px-9 py-4 rounded-2xl bg-white text-[#0A0F2E] font-semibold whitespace-nowrap hover:bg-[#E8B923]">
+                <button type="submit" class="premium-btn flex-shrink-0 min-w-[170px] px-9 py-4 rounded-2xl bg-white text-[#0A0F2E] font-semibold whitespace-nowrap hover:bg-[#E8B923]">
                     JOIN THE CIRCLE
                 </button>
             </form>
@@ -255,9 +203,6 @@
     </footer>
 
     <script>
-        // All previous scripts (Tailwind, mobile menu, neural canvas, video, newsletter, etc.) remain exactly the same as the last version.
-        // The fixes above are purely in the HTML structure for the two sections.
-
         function initTailwind() {
             tailwind.config = { theme: { extend: { colors: { cosmic: '#0A0F2E', 'deep-teal': '#0C2538', gold: '#E8B923' } } } };
         }
@@ -388,7 +333,7 @@
             initVideo();
             initNewsletter();
             initSmoothScroll();
-            console.log('%c[Sixth Day] Final version with button + card fixes applied.', 'color:#E8B923');
+            console.log('%c[Sixth Day] Final clean version loaded (Framework section removed).', 'color:#E8B923');
         }
 
         window.onload = initialize;
