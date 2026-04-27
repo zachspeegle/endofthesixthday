@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read the Book • The End of the Sixth Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
+        
+        .glass {
+            background: rgba(12, 37, 56, 0.72);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(232, 185, 35, 0.12);
+        }
+        
+        .premium-btn {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -120%;
+            width: 35%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+            transition: 0.7s;
+        }
+        .premium-btn:hover::before { left: 280%; }
+        
+        .chapter-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .chapter-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(232, 185, 35, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-[#0A0F2E] text-white">
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <a href="index.html">
+                    <img src="assets/6thdaylogo2.jpg" alt="The End of the Sixth Day" class="w-11 h-11 rounded-full ring-1 ring-white/20 object-cover">
+                </a>
+                <div>
+                    <div class="font-semibold tracking-tighter text-2xl">SIXTH DAY</div>
+                    <div class="text-[10px] text-white/50 -mt-1">FREE BROWSER EDITION</div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-6 text-sm">
+                <a href="index.html#vision" class="hover:text-[#E8B923] transition">The Vision</a>
+                <a href="index.html#echoes" class="hover:text-[#E8B923] transition">Echoes</a>
+                <a href="newsletter.html" class="hover:text-[#E8B923] transition">Newsletter</a>
+            </div>
+            
+            <a href="index.html" class="hidden md:block text-sm px-5 py-2 rounded-full border border-white/30 hover:border-[#E8B923] transition">
+                ← Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <div class="pt-20 pb-16 cosmic-bg border-b border-white/10">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-full bg-[#E8B923]/10 border border-[#E8B923]/30 mb-6">
+                <span class="text-[#E8B923] text-xs font-semibold tracking-[2px]">FREE BROWSER EDITION</span>
+            </div>
+            
+            <h1 class="heading-serif text-6xl md:text-7xl tracking-tighter mb-4">The End of the Sixth Day</h1>
+            <p class="text-2xl text-white/80 max-w-lg mx-auto">A Theory of Everything</p>
+            
+            <div class="mt-10 flex justify-center">
+                <a href="#toc" class="premium-btn flex items-center gap-x-3 px-8 py-4 rounded-2xl bg-white text-[#0A0F2E] font-semibold text-lg hover:bg-[#E8B923]">
+                    Start Reading <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTRO MESSAGE -->
+    <div class="max-w-3xl mx-auto px-8 py-16 text-center">
+        <div class="prose prose-invert text-xl text-white/90 leading-relaxed">
+            <p>Welcome to the free browser edition.</p>
+            <p class="mt-6">This book is my gift to you. If these words help you in any way, I only ask one thing in return:</p>
+            <p class="mt-6 font-medium text-[#E8B923]">Consider buying a physical copy and giving it to someone who could use some direction in life.</p>
+        </div>
+        
+        <div class="mt-12">
+            <a href="#preorder" class="premium-btn inline-flex items-center gap-x-3 px-10 py-4 rounded-2xl border border-[#E8B923] text-[#E8B923] font-semibold hover:bg-[#E8B923] hover:text-[#0A0F2E]">
+                Support the Work — Buy Physical Copy
+            </a>
+        </div>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div id="toc" class="max-w-5xl mx-auto px-8 pb-24">
+        <div class="text-center mb-12">
+            <div class="uppercase tracking-[3px] text-xs text-[#E8B923]">TABLE OF CONTENTS</div>
+            <h2 class="heading-serif text-5xl tracking-tighter mt-3">Chapters</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Chapter 1 -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]">01</div>
+                    <div>
+                        <div class="font-semibold text-xl">Waking Up Inside the Code</div>
+                        <div class="text-xs text-white/50">INTRODUCTION</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">The moment you realize the simulation is not a metaphor — it’s the operating system of reality.</p>
+                <a href="chapter-1.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <!-- Chapter 2 -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]">02</div>
+                    <div>
+                        <div class="font-semibold text-xl">Consciousness First</div>
+                        <div class="text-xs text-white/50">FOUNDATIONS</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">Why mind is more fundamental than matter, and why this changes everything about who you are.</p>
+                <a href="chapter-2.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <!-- Chapter 3 -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]">03</div>
+                    <div>
+                        <div class="font-semibold text-xl">The Architecture of Scripture</div>
+                        <div class="text-xs text-white/50">THE PATTERN</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">How the Bible may be the original user manual for the system we’re living inside.</p>
+                <a href="chapter-3.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <!-- Chapter 4 -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]">04</div>
+                    <div>
+                        <div class="font-semibold text-xl">Entropy, The Fall &amp; The Code</div>
+                        <div class="text-xs text-white/50">THE PROBLEM</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">Why things fall apart — and why the simulation seems designed to test and refine us.</p>
+                <a href="chapter-4.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <!-- Chapter 5 - Coming Soon -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col opacity-75">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-white/40">05</div>
+                    <div>
+                        <div class="font-semibold text-xl">The Genesis Grid</div>
+                        <div class="text-xs text-white/50">COMING SOON</div>
+                    </div>
+                </div>
+                <p class="text-white/60 flex-1">A deeper look at the structure of creation and the hidden architecture of reality. (Currently being refined)</p>
+                <div class="mt-8 text-white/40 text-sm">Release date: TBA</div>
+            </div>
+            
+            <!-- Chapter 6 -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]">06</div>
+                    <div>
+                        <div class="font-semibold text-xl">The Threshold</div>
+                        <div class="text-xs text-white/50">THE TURNING POINT</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">Where we are now — and why this moment in history feels different from every other.</p>
+                <a href="chapter-6.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+            
+            <!-- Chapter 7 -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]">07</div>
+                    <div>
+                        <div class="font-semibold text-xl">Entering the Sabbath Age</div>
+                        <div class="text-xs text-white/50">THE PROMISE</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">What comes after the sixth day — and the inheritance waiting for those who awaken.</p>
+                <a href="chapter-7.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div id="preorder" class="cosmic-bg py-20 border-t border-white/10">
+        <div class="max-w-2xl mx-auto px-8 text-center">
+            <h3 class="heading-serif text-4xl tracking-tight mb-6">Enjoying the free edition?</h3>
+            <p class="text-xl text-white/80 mb-10">Help someone else wake up. Get a physical copy to give away.</p>
+            
+            <a href="#" class="premium-btn inline-flex items-center gap-x-3 px-12 py-5 rounded-2xl bg-[#E8B923] text-[#0A0F2E] font-bold text-xl hover:bg-white">
+                BUY PHYSICAL COPY
+            </a>
+            
+            <p class="mt-6 text-xs text-white/50">Amazon • Signed Editions • Bulk Discounts Available Soon</p>
+        </div>
+    </div>
+
+    <footer class="border-t border-white/10 py-12 px-8 text-center text-sm text-white/50">
+        <p>© 2026 Zachary W. Speegle • Free Browser Edition • All chapters releasing soon</p>
+    </footer>
+
+    <script>
+        // Simple neural canvas for consistency
+        function initNeuralCanvas() {
+            const canvas = document.createElement('canvas');
+            canvas.className = 'fixed inset-0 pointer-events-none z-[-1]';
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize);
+            resize();
+            
+            // Very subtle background particles
+            let particles = [];
+            for (let i = 0; i < 25; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.2 + 0.5,
+                    alpha: Math.random() * 0.15 + 0.05
+                });
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(232,185,35,${p.alpha})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+        
+        window.onload = function() {
+            initNeuralCanvas();
+            console.log('%c[Sixth Day] book.html loaded successfully.', 'color:#E8B923');
+        }
+    </script>
+</body>
+</html>
