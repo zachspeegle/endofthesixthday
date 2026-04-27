@@ -9,93 +9,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:wght@700&amp;display=swap');
         
-        :root {
-            --cosmic: #0A0F2E;
-            --deep-teal: #0C2538;
-            --gold: #E8B923;
-            --gold-light: #FFD700;
-        }
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
         
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
+        .cosmic-bg { background: linear-gradient(180deg, #0A0F2E 0%, #0C2538 100%); }
+        .gold-glow { text-shadow: 0 0 20px rgba(232, 185, 35, 0.5), 0 0 40px rgba(232, 185, 35, 0.3); }
         
-        .heading-serif {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .cosmic-bg {
-            background: linear-gradient(180deg, #0A0F2E 0%, #0C2538 100%);
-        }
-
-        .gold-glow {
-            text-shadow: 0 0 20px rgba(232, 185, 35, 0.5),
-                        0 0 40px rgba(232, 185, 35, 0.3);
-        }
-
-        .section-header {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, #E8B923, #FFD700);
-            border-radius: 9999px;
-        }
-
         .glass {
-            background: rgba(12, 37, 56, 0.65);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(232, 185, 35, 0.15);
+            background: rgba(12, 37, 56, 0.72);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(232, 185, 35, 0.12);
         }
-
+        
         .neural-card {
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
         }
-        
         .neural-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 30px rgba(232, 185, 35, 0.2);
-            border-color: rgba(232, 185, 35, 0.4);
-        }
-
-        .quote {
-            position: relative;
-        }
-        
-        .quote::before {
-            content: '“';
-            font-size: 6rem;
-            line-height: 1;
-            opacity: 0.1;
-            position: absolute;
-            top: -30px;
-            left: -10px;
-            color: #E8B923;
-        }
-
-        .cosmic-grid {
-            background-image: 
-                linear-gradient(rgba(232, 185, 35, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(232, 185, 35, 0.06) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        .nav-link {
-            transition: all 0.2s ease;
-        }
-        
-        .nav-link:hover {
-            color: #E8B923;
-            text-shadow: 0 0 10px rgba(232, 185, 35, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 0 35px rgba(232, 185, 35, 0.18);
         }
 
         .premium-btn {
@@ -103,51 +34,33 @@
             position: relative;
             overflow: hidden;
         }
-        
         .premium-btn::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 40%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255,255,255,0.35),
-                transparent
-            );
-            transition: 0.6s;
+            top: 0; left: -120%;
+            width: 35%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+            transition: 0.7s;
         }
-        
-        .premium-btn:hover::before {
-            left: 250%;
-        }
+        .premium-btn:hover::before { left: 280%; }
 
-        .glow-gold {
-            box-shadow: 0 0 15px rgba(232, 185, 35, 0.4);
-        }
-
-        .matrix-text {
-            font-variant-numeric: tabular-nums;
-        }
+        .nav-link { transition: color 0.2s ease, text-shadow 0.2s ease; }
+        .nav-link:hover { color: #E8B923; text-shadow: 0 0 12px rgba(232, 185, 35, 0.5); }
     </style>
 </head>
 <body class="bg-[#0A0F2E] text-white overflow-x-hidden">
     <!-- NAV -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+    <nav class="fixed top-0 left-0 right-0 z-[60] glass border-b border-white/10">
         <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
-                <img src="assets/6thdaylogo2.jpg" alt="The End of the Sixth Day logo" 
-                     class="w-11 h-11 rounded-full object-cover ring-1 ring-white/20">
+                <img src="assets/6thdaylogo2.jpg" alt="The End of the Sixth Day" class="w-11 h-11 rounded-full ring-1 ring-white/20 object-cover">
                 <div>
                     <div class="font-semibold tracking-tighter text-2xl">SIXTH DAY</div>
                     <div class="text-[10px] text-white/50 -mt-1">A THEORY OF EVERYTHING</div>
                 </div>
             </div>
 
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                 <a href="#vision" class="nav-link">The Vision</a>
                 <a href="#framework" class="nav-link">The Framework</a>
                 <a href="#echoes" class="nav-link">Echoes</a>
@@ -156,16 +69,13 @@
             </div>
 
             <div class="hidden md:block">
-                <a href="#preorder" 
-                   class="premium-btn px-6 py-2.5 text-sm font-semibold rounded-full border border-[#E8B923]/60 hover:bg-[#E8B923] hover:text-[#0A0F2E] transition-all">
+                <a href="#preorder" class="premium-btn px-6 py-2.5 text-sm font-semibold rounded-full border border-[#E8B923]/60 hover:bg-[#E8B923] hover:text-[#0A0F2E]">
                     Pre-Order Coming Soon
                 </a>
             </div>
 
-            <!-- Mobile Hamburger -->
-            <button id="mobile-menu-btn"
-                    class="md:hidden w-11 h-11 flex items-center justify-center text-white/80 hover:text-white">
-                <i class="fa-solid fa-bars text-xl"></i>
+            <button id="mobile-menu-btn" class="md:hidden w-11 h-11 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
@@ -177,29 +87,29 @@
                 <a href="#echoes" class="nav-link py-1">Echoes</a>
                 <a href="book.html" class="nav-link py-1 font-semibold text-[#E8B923]">Read the Book (Free)</a>
                 <a href="newsletter.html" class="nav-link py-1">Newsletter</a>
-                <a href="#preorder" class="mt-2 premium-btn px-6 py-3 text-center text-sm font-semibold rounded-full border border-[#E8B923]/60">Pre-Order Coming Soon</a>
+                <a href="#preorder" class="mt-3 premium-btn px-6 py-3 text-center rounded-full border border-[#E8B923]/60">Pre-Order Coming Soon</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden pt-16">
-        <!-- Background Video -->
+        <!-- Video Background -->
         <video id="hero-video" 
-               class="absolute inset-0 w-full h-full object-cover"
-               autoplay muted loop playsinline>
-            <source src="assets/6th%20day%20video.mp4" type="video/mp4">
+               class="absolute inset-0 w-full h-full object-cover z-0"
+               autoplay muted loop playsinline preload="auto">
+            <source src="assets/6th-day-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
-        <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#0A0F2E]/70 via-[#0A0F2E]/50 to-[#0A0F2E]/80"></div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0A0F2E]/75 via-[#0A0F2E]/55 to-[#0A0F2E]/85 z-10"></div>
         
-        <!-- Neural Canvas Overlay -->
-        <canvas id="neural-canvas" class="absolute inset-0 z-10 pointer-events-auto"></canvas>
+        <!-- Neural Canvas -->
+        <canvas id="neural-canvas" class="absolute inset-0 z-20 pointer-events-auto"></canvas>
         
-        <!-- Content -->
-        <div class="relative z-20 max-w-5xl mx-auto px-6 text-center">
+        <!-- Hero Content -->
+        <div class="relative z-30 max-w-5xl mx-auto px-6 text-center">
             <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
                 <div class="w-2 h-2 bg-[#E8B923] rounded-full animate-pulse"></div>
                 <span class="uppercase tracking-[3px] text-xs font-semibold text-white/70">A PROPHETIC THRESHOLD</span>
@@ -214,30 +124,13 @@
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#vision" 
-                   class="premium-btn group flex items-center justify-center gap-x-3 px-9 py-4 rounded-2xl bg-white text-[#0A0F2E] font-semibold text-lg hover:bg-[#E8B923] transition-all">
+                <a href="#vision" class="premium-btn group flex items-center justify-center gap-x-3 px-9 py-4 rounded-2xl bg-white text-[#0A0F2E] font-semibold text-lg hover:bg-[#E8B923]">
                     <span>Enter the Vision</span>
                     <i class="fa-solid fa-arrow-down group-hover:translate-y-0.5 transition"></i>
                 </a>
-                
-                <a href="#preorder" 
-                   class="premium-btn flex items-center justify-center gap-x-3 px-8 py-4 rounded-2xl border border-white/40 hover:border-[#E8B923] text-white font-semibold text-lg transition-all">
+                <a href="#preorder" class="premium-btn flex items-center justify-center gap-x-3 px-8 py-4 rounded-2xl border border-white/40 hover:border-[#E8B923] text-white font-semibold text-lg">
                     Pre-Order Coming Soon
                 </a>
-            </div>
-            
-            <div class="mt-12 text-xs tracking-[2px] text-white/50 flex items-center justify-center gap-x-2">
-                <div class="w-px h-3 bg-white/30"></div>
-                SCROLL TO BEGIN
-                <div class="w-px h-3 bg-white/30"></div>
-            </div>
-        </div>
-        
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block">
-            <div class="flex flex-col items-center">
-                <div class="text-[10px] tracking-[2px] mb-1 text-white/40">DISCOVER</div>
-                <i class="fa-solid fa-chevron-down text-[#E8B923] animate-bounce"></i>
             </div>
         </div>
     </header>
@@ -254,21 +147,6 @@
                 <p>The End of the 6th Day is a sweeping argument that humanity is living inside a designed reality, moving toward a prophetic turning point, and waking up inside a story far bigger than modern materialism can explain.</p>
                 <p class="mt-6">This is not watered-down inspiration. It is a serious attempt to connect biblical structure, digital metaphysics, entropy reduction, spiritual awakening, and the destiny of human consciousness into one coherent vision.</p>
             </div>
-            
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass rounded-3xl p-8 border border-white/10">
-                    <div class="text-[#E8B923] text-sm font-semibold tracking-widest mb-3">CONSCIOUSNESS</div>
-                    <p class="text-white/90">Consciousness is more fundamental than matter. We are not accidents in a dead universe — we are participants in a living system of meaning.</p>
-                </div>
-                <div class="glass rounded-3xl p-8 border border-white/10">
-                    <div class="text-[#E8B923] text-sm font-semibold tracking-widest mb-3">THE SIMULATION</div>
-                    <p class="text-white/90">The universe is a purposeful simulation for soul development. Scripture may be the original architecture document of this system.</p>
-                </div>
-                <div class="glass rounded-3xl p-8 border border-white/10">
-                    <div class="text-[#E8B923] text-sm font-semibold tracking-widest mb-3">THE THRESHOLD</div>
-                    <p class="text-white/90">We may be living at the end of the sixth day — not at the end of meaning, but at the threshold of rest.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -278,42 +156,37 @@
             <div class="text-center mb-16">
                 <div class="uppercase tracking-[3px] text-xs font-semibold text-[#E8B923]">THE PROPHETIC ARCHITECTURE</div>
                 <h2 class="heading-serif text-6xl tracking-tighter mt-3">The Six-Day Pattern</h2>
-                <p class="mt-4 max-w-md mx-auto text-white/70">History itself appears to follow the biblical template of six days of labor followed by a Sabbath age of rest and revelation.</p>
+                <p class="mt-4 max-w-lg mx-auto text-white/70">History itself appears to follow the biblical template of six days of labor followed by a Sabbath age of rest and revelation.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <!-- Day cards -->
-                <div class="neural-card glass rounded-3xl p-8 border border-white/10 group">
-                    <div class="flex items-baseline gap-x-3 mb-4">
-                        <span class="text-5xl font-light text-[#E8B923]/80 group-hover:text-[#E8B923] transition">01–05</span>
-                    </div>
-                    <h4 class="font-semibold text-xl mb-3">The Long Construction</h4>
-                    <p class="text-white/80 text-sm">The foundational ages of human history — the slow building of consciousness, civilization, and the conditions for awakening.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                <!-- Day 01-05 -->
+                <div class="neural-card glass rounded-3xl p-8 border border-white/10 min-h-[280px]">
+                    <div class="text-5xl font-light text-[#E8B923]/80 mb-4">01–05</div>
+                    <h4 class="font-semibold text-2xl mb-4">The Long Construction</h4>
+                    <p class="text-white/85 leading-relaxed">The foundational ages of human history — the slow building of consciousness, civilization, and the conditions for awakening.</p>
                 </div>
                 
-                <div class="neural-card glass rounded-3xl p-8 border border-white/10 group">
-                    <div class="flex items-baseline gap-x-3 mb-4">
-                        <span class="text-5xl font-light text-[#E8B923]/80 group-hover:text-[#E8B923] transition">06</span>
-                    </div>
-                    <h4 class="font-semibold text-xl mb-3">The Age of Acceleration</h4>
-                    <p class="text-white/80 text-sm">Technological explosion, spiritual crisis, and the final intensification of the simulation. We are here now.</p>
+                <!-- Day 06 -->
+                <div class="neural-card glass rounded-3xl p-8 border border-white/10 min-h-[280px]">
+                    <div class="text-5xl font-light text-[#E8B923]/80 mb-4">06</div>
+                    <h4 class="font-semibold text-2xl mb-4">The Age of Acceleration</h4>
+                    <p class="text-white/85 leading-relaxed">Technological explosion, spiritual crisis, and the final intensification of the simulation. We are here now.</p>
                 </div>
                 
-                <div class="neural-card glass rounded-3xl p-8 border border-[#E8B923]/40 group bg-[#0A0F2E]">
-                    <div class="flex items-baseline gap-x-3 mb-4">
-                        <span class="text-5xl font-light text-[#E8B923]">THRESHOLD</span>
-                    </div>
-                    <h4 class="font-semibold text-xl mb-3">The End of the Sixth Day</h4>
-                    <p class="text-white/90 text-sm">The prophetic turning point. The moment the system reveals its purpose and the great reset of consciousness begins.</p>
-                    <div class="mt-6 text-xs px-4 py-1 rounded-full bg-[#E8B923]/10 text-[#E8B923] inline-block">YOU ARE HERE</div>
+                <!-- Threshold -->
+                <div class="neural-card glass rounded-3xl p-8 border border-[#E8B923]/50 bg-[#0A0F2E] min-h-[280px]">
+                    <div class="text-5xl font-light text-[#E8B923] mb-4">THRESHOLD</div>
+                    <h4 class="font-semibold text-2xl mb-4">The End of the Sixth Day</h4>
+                    <p class="text-white/90 leading-relaxed">The prophetic turning point. The moment the system reveals its purpose and the great reset of consciousness begins.</p>
+                    <div class="mt-6 inline-block px-4 py-1 text-xs rounded-full bg-[#E8B923] text-[#0A0F2E] font-semibold">YOU ARE HERE</div>
                 </div>
                 
-                <div class="neural-card glass rounded-3xl p-8 border border-white/10 group">
-                    <div class="flex items-baseline gap-x-3 mb-4">
-                        <span class="text-5xl font-light text-[#E8B923]/80 group-hover:text-[#E8B923] transition">07</span>
-                    </div>
-                    <h4 class="font-semibold text-xl mb-3">The Sabbath Age</h4>
-                    <p class="text-white/80 text-sm">Rest. Revelation. The age of fulfilled purpose where the simulation completes its work and humanity steps into its true inheritance.</p>
+                <!-- Day 07 -->
+                <div class="neural-card glass rounded-3xl p-8 border border-white/10 min-h-[280px]">
+                    <div class="text-5xl font-light text-[#E8B923]/80 mb-4">07</div>
+                    <h4 class="font-semibold text-2xl mb-4">The Sabbath Age</h4>
+                    <p class="text-white/85 leading-relaxed">Rest. Revelation. The age of fulfilled purpose where the simulation completes its work and humanity steps into its true inheritance.</p>
                 </div>
             </div>
         </div>
@@ -327,22 +200,10 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div class="quote glass p-10 rounded-3xl border border-white/10 text-lg leading-snug">
-                Reality may be less like dead machinery and more like a living system of meaning, consequence, and design.
-            </div>
-            <div class="quote glass p-10 rounded-3xl border border-white/10 text-lg leading-snug">
-                We did not stumble into existence by accident. We entered a world already structured for growth, testing, and awakening.
-            </div>
-            <div class="quote glass p-10 rounded-3xl border border-white/10 text-lg leading-snug">
-                The Bible may not be primitive superstition surviving modernity. It may be the original architecture document.
-            </div>
-            <div class="quote glass p-10 rounded-3xl border border-white/10 text-lg leading-snug">
-                If consciousness is upstream from matter, then human life is not cheap. It is the battlefield where eternity learns to choose.
-            </div>
-        </div>
-        
-        <div class="text-center mt-12">
-            <p class="text-sm text-white/60 max-w-xs mx-auto">These are not opinions. They are the natural conclusions of the pattern.</p>
+            <div class="glass p-10 rounded-3xl border border-white/10 text-xl leading-snug">Reality may be less like dead machinery and more like a living system of meaning, consequence, and design.</div>
+            <div class="glass p-10 rounded-3xl border border-white/10 text-xl leading-snug">We did not stumble into existence by accident. We entered a world already structured for growth, testing, and awakening.</div>
+            <div class="glass p-10 rounded-3xl border border-white/10 text-xl leading-snug">The Bible may not be primitive superstition surviving modernity. It may be the original architecture document.</div>
+            <div class="glass p-10 rounded-3xl border border-white/10 text-xl leading-snug">If consciousness is upstream from matter, then human life is not cheap. It is the battlefield where eternity learns to choose.</div>
         </div>
     </section>
 
@@ -350,48 +211,32 @@
     <section class="max-w-screen-2xl mx-auto px-8 pb-24">
         <div class="max-w-3xl mx-auto glass rounded-3xl p-16 border border-white/10 text-center">
             <div class="mx-auto w-24 h-24 rounded-full overflow-hidden ring-2 ring-[#E8B923]/30 mb-8">
-                <img src="assets/6thdaylogo2.jpg" alt="Zachary W. Speegle" class="w-full h-full object-cover grayscale-[0.3]">
+                <img src="assets/6thdaylogo2.jpg" alt="Zachary W. Speegle" class="w-full h-full object-cover grayscale-[0.2]">
             </div>
-            
             <h3 class="text-4xl tracking-tight">Zachary W. Speegle</h3>
             <div class="text-[#E8B923] text-sm tracking-[2px] mt-1 mb-6">AUTHOR • THINKER • AWAKENER</div>
-            
-            <p class="max-w-md mx-auto text-white/80 text-lg leading-relaxed">
-                Author bio coming soon.<br>
-                This work emerges from a lifelong engagement with scripture, digital metaphysics, and the lived experience of awakening inside the simulation.
-            </p>
+            <p class="max-w-md mx-auto text-white/80 text-lg">Author bio coming soon.<br>This work emerges from a deep engagement with scripture, digital metaphysics, and the lived experience of awakening.</p>
         </div>
     </section>
 
-    <!-- READ THE BOOK CTA -->
-    <section id="preorder" class="relative py-24 border-t border-white/10 cosmic-bg overflow-hidden">
-        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+    <!-- READ THE BOOK -->
+    <section id="preorder" class="relative py-24 border-t border-white/10 cosmic-bg">
+        <div class="max-w-4xl mx-auto px-8 text-center">
             <div class="mx-auto w-16 h-px bg-gradient-to-r from-transparent via-[#E8B923] to-transparent mb-8"></div>
-            
             <h2 class="heading-serif text-6xl tracking-tighter mb-6">The Book Is Yours to Read — Freely.</h2>
-            
-            <p class="max-w-2xl mx-auto text-2xl text-white/90 font-light mb-10">
-                If this work has helped you in any way, consider purchasing a physical copy and giving it to someone who could use some direction in life.
-            </p>
+            <p class="max-w-2xl mx-auto text-2xl text-white/90 font-light mb-10">If this work has helped you in any way, consider purchasing a physical copy and giving it to someone who could use some direction in life.</p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="book.html" 
-                   class="premium-btn group inline-flex items-center justify-center gap-x-4 px-14 py-5 rounded-2xl bg-[#E8B923] text-[#0A0F2E] font-bold text-xl hover:bg-white transition-all shadow-xl shadow-[#E8B923]/30">
-                    <span>READ THE BOOK NOW</span>
-                    <span class="text-sm font-normal opacity-70 group-hover:opacity-100">(Free Browser Edition)</span>
+                <a href="book.html" class="premium-btn group inline-flex items-center justify-center gap-x-4 px-14 py-5 rounded-2xl bg-[#E8B923] text-[#0A0F2E] font-bold text-xl hover:bg-white transition-all shadow-xl shadow-[#E8B923]/30">
+                    READ THE BOOK NOW <span class="font-normal text-base opacity-75">(Free Browser Edition)</span>
                 </a>
-                
-                <a href="#preorder" 
-                   class="premium-btn inline-flex items-center justify-center px-10 py-5 rounded-2xl border border-white/40 hover:border-[#E8B923] text-lg font-semibold transition-all">
-                    Pre-Order Physical Copy
-                </a>
+                <a href="#preorder" class="premium-btn inline-flex items-center justify-center px-10 py-5 rounded-2xl border border-white/40 hover:border-[#E8B923] text-lg font-semibold">Pre-Order Physical Copy</a>
             </div>
-            
-            <p class="mt-8 text-xs text-white/50 tracking-widest">CHAPTER-BY-CHAPTER RELEASE COMING SOON • ONE PAGE PER CHAPTER</p>
+            <p class="mt-8 text-xs text-white/50 tracking-widest">CHAPTER-BY-CHAPTER RELEASE • ONE PAGE PER CHAPTER</p>
         </div>
     </section>
 
-    <!-- NEWSLETTER TEASER -->
+    <!-- NEWSLETTER -->
     <section class="max-w-screen-2xl mx-auto px-8 py-20 border-t border-white/10">
         <div class="max-w-xl mx-auto text-center">
             <div class="uppercase text-xs tracking-[3px] text-[#E8B923]">STAY AT THE THRESHOLD</div>
@@ -400,9 +245,8 @@
             
             <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input type="email" id="email-input" placeholder="your@email.com" 
-                       class="flex-1 px-6 py-4 rounded-2xl bg-white/5 border border-white/20 focus:border-[#E8B923] outline-none text-white placeholder:text-white/50">
-                <button type="submit" 
-                        class="premium-btn px-9 py-4 rounded-2xl bg-white text-[#0A0F2E] font-semibold whitespace-nowrap hover:bg-[#E8B923]">
+                       class="flex-1 px-6 py-4 rounded-2xl bg-[#0C2538] border border-white/20 focus:border-[#E8B923] outline-none text-white placeholder:text-white/50">
+                <button type="submit" class="premium-btn px-9 py-4 rounded-2xl bg-white text-[#0A0F2E] font-semibold whitespace-nowrap hover:bg-[#E8B923]">
                     JOIN THE CIRCLE
                 </button>
             </form>
@@ -410,293 +254,198 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="border-t border-white/10 py-16 px-8 text-sm text-white/60">
         <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-y-6">
             <div>© 2026 Zachary W. Speegle. All rights reserved.</div>
-            
             <div class="flex gap-x-8">
                 <a href="#" class="hover:text-white transition">X</a>
                 <a href="#" class="hover:text-white transition">Instagram</a>
                 <a href="newsletter.html" class="hover:text-white transition">Newsletter</a>
                 <a href="book.html" class="hover:text-white transition">Free Edition</a>
             </div>
-            
             <div class="text-xs">Crafted with intention in the simulation</div>
         </div>
     </footer>
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Tailwind config
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent-gold', '#E8B923');
-            
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            'cosmic': '#0A0F2E',
-                            'deep-teal': '#0C2538',
-                            'gold': '#E8B923'
-                        }
-                    }
-                }
-            };
+        // Tailwind
+        function initTailwind() {
+            tailwind.config = { theme: { extend: { colors: { cosmic: '#0A0F2E', 'deep-teal': '#0C2538', gold: '#E8B923' } } } };
         }
 
-        // Mobile menu
+        // Mobile Menu
         function initMobileMenu() {
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
-            
             btn.addEventListener('click', () => {
                 menu.classList.toggle('hidden');
                 const icon = btn.querySelector('i');
                 icon.classList.toggle('fa-bars');
                 icon.classList.toggle('fa-times');
             });
-            
-            // Close on link click
-            menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                    const icon = btn.querySelector('i');
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                });
-            });
+            menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                btn.querySelector('i').classList.add('fa-bars');
+                btn.querySelector('i').classList.remove('fa-times');
+            }));
         }
 
-        // Neural Canvas - Scroll Reactive
+        // Neural Canvas (refined)
         function initNeuralCanvas() {
             const canvas = document.getElementById('neural-canvas');
             const ctx = canvas.getContext('2d', { alpha: true });
-            
             let particles = [];
-            let scrollIntensity = 0;
-            
-            function resizeCanvas() {
+            let intensity = 0.35;
+
+            function resize() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             }
-            
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-            
+            window.addEventListener('resize', resize);
+            resize();
+
             class Particle {
-                constructor() {
-                    this.reset();
-                }
-                
+                constructor() { this.reset(); }
                 reset() {
                     this.x = Math.random() * canvas.width;
                     this.y = Math.random() * canvas.height;
-                    this.vx = (Math.random() - 0.5) * 0.6;
-                    this.vy = (Math.random() - 0.5) * 0.6;
-                    this.size = Math.random() * 2.2 + 0.8;
-                    this.alpha = Math.random() * 0.6 + 0.3;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.size = Math.random() * 1.8 + 0.7;
+                    this.alpha = Math.random() * 0.5 + 0.25;
                 }
-                
                 update() {
-                    this.x += this.vx * (1 + scrollIntensity * 0.8);
-                    this.y += this.vy * (1 + scrollIntensity * 0.8);
-                    
-                    // Gentle wrap
+                    this.x += this.vx * (1 + intensity * 0.6);
+                    this.y += this.vy * (1 + intensity * 0.6);
                     if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                     if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                    
-                    // Occasionally reset for organic feel
-                    if (Math.random() < 0.002) this.reset();
+                    if (Math.random() < 0.003) this.reset();
                 }
-                
                 draw() {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(232, 185, 35, ${this.alpha})`;
+                    ctx.fillStyle = `rgba(232,185,35,${this.alpha})`;
                     ctx.fill();
                 }
             }
-            
-            // Create particles
-            for (let i = 0; i < 85; i++) {
-                particles.push(new Particle());
-            }
-            
-            // Scroll listener
-            let lastScroll = 0;
+
+            for (let i = 0; i < 72; i++) particles.push(new Particle());
+
             window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                scrollIntensity = Math.min(Math.max((scrollY - 300) / 1200, 0), 1.4);
+                intensity = Math.min(Math.max((window.scrollY - 200) / 900, 0.35), 1.1);
             });
-            
-            function drawConnections() {
-                ctx.strokeStyle = 'rgba(232, 185, 35, 0.18)';
-                ctx.lineWidth = 0.7;
-                
+
+            function drawLines() {
+                ctx.strokeStyle = 'rgba(232,185,35,0.15)';
+                ctx.lineWidth = 0.6;
                 for (let i = 0; i < particles.length; i++) {
                     for (let j = i + 1; j < particles.length; j++) {
                         const dx = particles[i].x - particles[j].x;
                         const dy = particles[i].y - particles[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < 145 + scrollIntensity * 55) {
+                        const dist = Math.sqrt(dx*dx + dy*dy);
+                        if (dist < 135 + intensity * 40) {
                             ctx.beginPath();
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
-                            
-                            const alpha = (1 - distance / (145 + scrollIntensity * 55)) * (0.35 + scrollIntensity * 0.4);
-                            ctx.strokeStyle = `rgba(232, 185, 35, ${alpha})`;
+                            ctx.strokeStyle = `rgba(232,185,35,${(1 - dist / (135 + intensity * 40)) * 0.35})`;
                             ctx.stroke();
                         }
                     }
                 }
             }
-            
+
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                // Update & draw particles
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-                
-                drawConnections();
-                
-                // Occasionally add new connection burst on high scroll
-                if (scrollIntensity > 0.9 && Math.random() < 0.08) {
-                    ctx.strokeStyle = 'rgba(255, 215, 0, 0.6)';
-                    ctx.lineWidth = 1.5;
-                    const p1 = particles[Math.floor(Math.random() * particles.length)];
-                    const p2 = particles[Math.floor(Math.random() * particles.length)];
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
-                }
-                
+                particles.forEach(p => { p.update(); p.draw(); });
+                drawLines();
                 requestAnimationFrame(animate);
             }
-            
             animate();
-            
-            // Gentle initial pulse
-            setTimeout(() => {
-                scrollIntensity = 0.3;
-                setTimeout(() => { scrollIntensity = 0; }, 1200);
-            }, 800);
         }
 
-        // Newsletter form
-        function initNewsletter() {
-            const form = document.getElementById('newsletter-form');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = document.getElementById('email-input').value;
-                
-                if (email) {
-                    const btn = form.querySelector('button');
-                    const originalText = btn.innerHTML;
-                    
-                    btn.innerHTML = 'THANK YOU — YOU ARE IN';
-                    btn.disabled = true;
-                    btn.classList.add('!bg-emerald-500', '!text-white');
-                    
-                    setTimeout(() => {
-                        alert("Welcome to the circle. You'll receive your first dispatch within 48 hours.");
-                        form.reset();
-                        btn.innerHTML = originalText;
-                        btn.disabled = false;
-                        btn.classList.remove('!bg-emerald-500', '!text-white');
-                    }, 1450);
-                }
-            });
-        }
-
-        // Smooth scroll for nav links
-        function initSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
-
-        // Video fallback & subtle enhancement
+        // Video Handler (robust)
         function initVideo() {
             const video = document.getElementById('hero-video');
             
-            // Ensure it plays
             video.addEventListener('loadeddata', () => {
                 video.play().catch(() => {});
             });
             
-            // Pause video when not in view (performance)
-            const observer = new IntersectionObserver((entries) => {
+            // Force play on mobile
+            setTimeout(() => {
+                if (video.paused) video.play().catch(() => {});
+            }, 800);
+            
+            // Intersection observer
+            const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        video.play();
-                    } else {
-                        video.pause();
+                    if (entry.isIntersecting) video.play();
+                    else video.pause();
+                });
+            }, { threshold: 0.2 });
+            observer.observe(video);
+            
+            // Fallback if video fails
+            video.addEventListener('error', () => {
+                console.warn('Video failed to load. Check filename in assets folder.');
+            });
+        }
+
+        // Newsletter
+        function initNewsletter() {
+            const form = document.getElementById('newsletter-form');
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                const original = btn.innerHTML;
+                btn.innerHTML = 'THANK YOU — YOU ARE IN';
+                btn.disabled = true;
+                btn.classList.add('!bg-emerald-500', '!text-white');
+                
+                setTimeout(() => {
+                    alert("Welcome to the circle. First dispatch arriving soon.");
+                    form.reset();
+                    btn.innerHTML = original;
+                    btn.disabled = false;
+                    btn.classList.remove('!bg-emerald-500', '!text-white');
+                }, 1400);
+            });
+        }
+
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    const target = document.querySelector(a.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
                     }
                 });
-            }, { threshold: 0.1 });
-            
-            observer.observe(video);
+            });
         }
 
-        // Keyboard accessibility
         function initKeyboard() {
-            document.addEventListener('keydown', (e) => {
+            document.addEventListener('keypress', e => {
                 if (e.key === '/' && document.activeElement.tagName === 'BODY') {
                     e.preventDefault();
-                    const emailInput = document.getElementById('email-input');
-                    if (emailInput) emailInput.focus();
+                    document.getElementById('email-input')?.focus();
                 }
             });
         }
 
-        // Boot everything
-        function initializeSite() {
-            initializeTailwind();
+        function initialize() {
+            initTailwind();
             initMobileMenu();
             initNeuralCanvas();
+            initVideo();
             initNewsletter();
             initSmoothScroll();
-            initVideo();
             initKeyboard();
             
-            // Easter egg: press '6' to boost neural intensity
-            document.addEventListener('keypress', (e) => {
-                if (e.key === '6') {
-                    const canvas = document.getElementById('neural-canvas');
-                    canvas.style.transition = 'filter 0.4s';
-                    canvas.style.filter = 'brightness(1.6) saturate(1.4)';
-                    setTimeout(() => {
-                        canvas.style.filter = 'none';
-                    }, 900);
-                }
-            });
-            
-            // Final polish: subtle entrance
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 120);
-            
-            console.log('%c[Sixth Day] Premium prototype initialized. Neural canvas active. Ready for GitHub deployment.', 'color:#E8B923');
+            console.log('%c[Sixth Day] Final polished version loaded successfully.', 'color:#E8B923');
         }
 
-        // Start
-        window.onload = initializeSite;
+        window.onload = initialize;
     </script>
 </body>
 </html>
