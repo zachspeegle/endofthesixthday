@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 06 • The End of the Sixth Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap');
+        :root { --reading-size: 20px; --line-height: 1.82; }
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #0A0F2E; }
+        .reading-content { font-size: var(--reading-size); line-height: var(--line-height); color: #E2E8F0; max-width: 720px; margin: 0 auto; }
+        .reading-content h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.65em; line-height: 1.3; color: #F1E7D2; margin-top: 2.2em; margin-bottom: 0.6em; }
+        .reading-content p { margin-bottom: 1.35em; }
+        .reading-content blockquote { border-left: 4px solid #E8B923; padding-left: 1.5rem; margin: 2.5rem 0; font-style: italic; color: #CBD5E1; }
+        .reader-controls { transition: all 0.3s ease; }
+        .focus-mode .reader-controls, .focus-mode nav, .focus-mode footer { opacity: 0; pointer-events: none; }
+        .focus-mode .reading-content { max-width: 780px; }
+        .progress-bar { transition: width 0.1s ease-out; }
+    </style>
+</head>
+<body class="text-white">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-x-4">
+                <a href="book.html" class="flex items-center gap-x-3">
+                    <img src="assets/6thdaylogo2.jpg" alt="Logo" class="w-9 h-9 rounded-full ring-1 ring-white/20">
+                    <div class="hidden md:block">
+                        <div class="text-sm font-semibold">THE END OF THE SIXTH DAY</div>
+                        <div class="text-[10px] text-white/50 -mt-0.5">Chapter 06</div>
+                    </div>
+                </a>
+            </div>
+            <div class="hidden md:block text-center">
+                <div class="text-sm font-medium text-white/90">Chapter 6 Title</div>
+            </div>
+            <div class="flex items-center gap-x-2 reader-controls">
+                <div class="flex items-center bg-white/5 rounded-2xl p-1 border border-white/10">
+                    <button onclick="adjustTextSize(-1)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-lg">A−</button>
+                    <button onclick="adjustTextSize(0)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-sm font-medium">A</button>
+                    <button onclick="adjustTextSize(1)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-lg">A+</button>
+                </div>
+                <button onclick="toggleFocusMode()" class="flex items-center gap-x-2 px-4 py-2 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm transition">
+                    <i class="fa-solid fa-expand mr-1.5"></i><span class="hidden sm:inline">Focus</span>
+                </button>
+            </div>
+        </div>
+        <div class="h-0.5 bg-white/10">
+            <div id="progress-bar" class="progress-bar h-0.5 bg-[#E8B923] w-0"></div>
+        </div>
+    </nav>
+
+    <div class="pt-24 pb-20 px-6 max-w-[720px] mx-auto">
+        <div class="mb-14 text-center">
+            <div class="text-xs tracking-[3px] text-[#E8B923] mb-3">CHAPTER 06</div>
+            <h1 class="font-serif text-5xl md:text-6xl tracking-tighter">Chapter 6 Title</h1>
+            <p class="mt-4 text-xl text-white/70 max-w-md mx-auto">Chapter 6 subtitle or tagline.</p>
+        </div>
+        <div class="reading-content" id="reading-content">
+            <p>[ Chapter 6 content goes here. ]</p>
+        </div>
+    </div>
+
+    <div class="border-t border-white/10 py-12">
+        <div class="max-w-[720px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-y-4 text-sm">
+            <a href="chapter-05.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition">
+                <i class="fa-solid fa-arrow-left"></i><span>Chapter 5</span>
+            </a>
+            <a href="book.html" class="px-6 py-2.5 rounded-2xl border border-white/20 hover:border-[#E8B923] text-white/80 hover:text-white transition flex items-center gap-x-2">
+                <i class="fa-solid fa-list-ul"></i><span>Table of Contents</span>
+            </a>
+            <a href="chapter-07.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition">
+                <span>Chapter 7</span><i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <footer class="text-center py-8 text-xs text-white/40">
+        Free Browser Edition • The End of the Sixth Day © 2026 Zachary W. Speegle
+    </footer>
+
+    <script>
+        function initTailwind() { tailwind.config = { theme: { extend: { colors: { gold: '#E8B923' } } } }; }
+        let currentSizeLevel = 1;
+        function adjustTextSize(direction) {
+            const content = document.getElementById('reading-content');
+            if (direction === 0) { currentSizeLevel = 1; } else { currentSizeLevel = Math.max(0, Math.min(2, currentSizeLevel + direction)); }
+            content.style.setProperty('--reading-size', ['18px','20px','22px'][currentSizeLevel]);
+            localStorage.setItem('chapterTextSize', currentSizeLevel);
+        }
+        function loadSavedTextSize() {
+            const saved = localStorage.getItem('chapterTextSize');
+            if (saved !== null) { currentSizeLevel = parseInt(saved); document.getElementById('reading-content').style.setProperty('--reading-size', ['18px','20px','22px'][currentSizeLevel]); }
+        }
+        function toggleFocusMode() {
+            document.body.classList.toggle('focus-mode');
+            const on = document.body.classList.contains('focus-mode');
+            document.querySelectorAll('.reader-controls button').forEach(b => b.style.opacity = on ? '0.3' : '1');
+        }
+        function initProgressBar() {
+            const bar = document.getElementById('progress-bar');
+            window.addEventListener('scroll', () => { const d = document.documentElement.scrollHeight - window.innerHeight; bar.style.width = Math.min((window.scrollY / d) * 100, 100) + '%'; });
+        }
+        function initKeyboardShortcuts() {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === '-' || e.key === '_') { e.preventDefault(); adjustTextSize(-1); }
+                if (e.key === '+' || e.key === '=') { e.preventDefault(); adjustTextSize(1); }
+                if (e.key.toLowerCase() === 'f') { e.preventDefault(); toggleFocusMode(); }
+                if (e.key === 'Escape') { document.body.classList.remove('focus-mode'); }
+            });
+        }
+        window.onload = function() { initTailwind(); loadSavedTextSize(); initProgressBar(); initKeyboardShortcuts(); };
+    </script>
+</body>
+</html>
