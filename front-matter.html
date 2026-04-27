@@ -8,68 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap');
-
-        :root {
-            --reading-size: 20px;
-            --line-height: 1.82;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background-color: #0A0F2E;
-        }
-
-        .reading-content {
-            font-size: var(--reading-size);
-            line-height: var(--line-height);
-            color: #E2E8F0;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .reading-content h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.65em;
-            line-height: 1.3;
-            color: #F1E7D2;
-            margin-top: 2.2em;
-            margin-bottom: 0.6em;
-        }
-
-        .reading-content p {
-            margin-bottom: 1.35em;
-        }
-
-        .reading-content blockquote {
-            border-left: 4px solid #E8B923;
-            padding-left: 1.5rem;
-            margin: 2.5rem 0;
-            font-style: italic;
-            color: #CBD5E1;
-        }
-
-        .reader-controls {
-            transition: all 0.3s ease;
-        }
-
-        .focus-mode .reader-controls,
-        .focus-mode nav,
-        .focus-mode footer {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .focus-mode .reading-content {
-            max-width: 780px;
-        }
-
-        .progress-bar {
-            transition: width 0.1s ease-out;
-        }
+        :root { --reading-size: 20px; --line-height: 1.82; }
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #0A0F2E; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
+        .glass { background: rgba(12, 37, 56, 0.72); backdrop-filter: blur(24px); }
+        .reading-content { font-size: var(--reading-size); line-height: var(--line-height); color: #E2E8F0; max-width: 720px; margin: 0 auto; }
+        .reading-content h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.65em; line-height: 1.3; color: #F1E7D2; margin-top: 2.2em; margin-bottom: 0.6em; }
+        .reading-content p { margin-bottom: 1.35em; }
+        .reading-content blockquote { border-left: 4px solid #E8B923; padding-left: 1.5rem; margin: 2.5rem 0; font-style: italic; color: #CBD5E1; }
+        .reader-controls { transition: all 0.3s ease; }
+        .focus-mode .reader-controls, .focus-mode nav, .focus-mode footer { opacity: 0; pointer-events: none; }
+        .focus-mode .reading-content { max-width: 780px; }
+        .progress-bar { transition: width 0.1s ease-out; }
     </style>
 </head>
 <body class="text-white">
-    <!-- TOP BAR -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
         <div class="max-w-screen-2xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-x-4">
@@ -81,61 +34,61 @@
                     </div>
                 </a>
             </div>
-
             <div class="hidden md:block text-center">
                 <div class="text-sm font-medium text-white/90">A Note to the Reader</div>
             </div>
-
             <div class="flex items-center gap-x-2 reader-controls">
                 <div class="flex items-center bg-white/5 rounded-2xl p-1 border border-white/10">
                     <button onclick="adjustTextSize(-1)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-lg">A−</button>
                     <button onclick="adjustTextSize(0)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-sm font-medium">A</button>
                     <button onclick="adjustTextSize(1)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-lg">A+</button>
                 </div>
-
-                <button onclick="toggleFocusMode()"
-                        class="flex items-center gap-x-2 px-4 py-2 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm transition">
-                    <i class="fa-solid fa-expand mr-1.5"></i>
-                    <span class="hidden sm:inline">Focus</span>
+                <button onclick="toggleFocusMode()" class="flex items-center gap-x-2 px-4 py-2 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm transition">
+                    <i class="fa-solid fa-expand mr-1.5"></i><span class="hidden sm:inline">Focus</span>
                 </button>
             </div>
         </div>
-
         <div class="h-0.5 bg-white/10">
             <div id="progress-bar" class="progress-bar h-0.5 bg-[#E8B923] w-0"></div>
         </div>
     </nav>
 
-    <!-- CONTENT -->
     <div class="pt-24 pb-20 px-6 max-w-[720px] mx-auto">
-
         <div class="mb-14 text-center">
             <div class="text-xs tracking-[3px] text-[#E8B923] mb-3">FRONT MATTER</div>
-            <h1 class="font-serif text-5xl md:text-6xl tracking-tighter">A Note to the Reader</h1>
+            <h1 class="heading-serif text-5xl md:text-6xl tracking-tighter">A Note to the Reader</h1>
             <p class="mt-4 text-xl text-white/70 max-w-md mx-auto">Before we begin.</p>
         </div>
 
+        <!-- ================================================================
+             CONTENT AREA — Front Matter | front-matter.html
+             ================================================================
+             Paste your text below, replacing the placeholder <p> tag.
+             Supported elements:
+               Paragraph      → <p>Text here.</p>
+               Section header → <h2>Heading</h2>
+               Block quote    → <blockquote>Quote text<br>
+                                  <span class="text-sm not-italic">— Attribution</span>
+                                </blockquote>
+               Italic text    → <em>text</em>
+               Bold text      → <strong>text</strong>
+               Scene break    → <p class="text-center text-white/40">* * *</p>
+             ================================================================ -->
         <div class="reading-content" id="reading-content">
             <p>[ Front matter content goes here. ]</p>
         </div>
     </div>
 
-    <!-- BOTTOM NAV -->
     <div class="border-t border-white/10 py-12">
         <div class="max-w-[720px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-y-4 text-sm">
             <a href="book.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span>Table of Contents</span>
+                <i class="fa-solid fa-arrow-left"></i><span>Table of Contents</span>
             </a>
-
             <a href="book.html" class="px-6 py-2.5 rounded-2xl border border-white/20 hover:border-[#E8B923] text-white/80 hover:text-white transition flex items-center gap-x-2">
-                <i class="fa-solid fa-list-ul"></i>
-                <span>Table of Contents</span>
+                <i class="fa-solid fa-list-ul"></i><span>Table of Contents</span>
             </a>
-
             <a href="chapter-01.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition">
-                <span>Chapter 1</span>
-                <i class="fa-solid fa-arrow-right"></i>
+                <span>Chapter 1</span><i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
     </div>
@@ -145,60 +98,27 @@
     </footer>
 
     <script>
-        function initTailwind() {
-            tailwind.config = {
-                theme: { extend: { colors: { gold: '#E8B923' } } }
-            };
-        }
-
+        function initTailwind() { tailwind.config = { theme: { extend: { colors: { gold: '#E8B923' } } } }; }
         let currentSizeLevel = 1;
-
         function adjustTextSize(direction) {
             const content = document.getElementById('reading-content');
-            if (direction === 0) { currentSizeLevel = 1; }
-            else { currentSizeLevel = Math.max(0, Math.min(2, currentSizeLevel + direction)); }
-            let newSize;
-            switch(currentSizeLevel) {
-                case 0: newSize = '18px'; break;
-                case 1: newSize = '20px'; break;
-                case 2: newSize = '22px'; break;
-            }
-            content.style.setProperty('--reading-size', newSize);
+            if (direction === 0) { currentSizeLevel = 1; } else { currentSizeLevel = Math.max(0, Math.min(2, currentSizeLevel + direction)); }
+            content.style.setProperty('--reading-size', ['18px','20px','22px'][currentSizeLevel]);
             localStorage.setItem('chapterTextSize', currentSizeLevel);
         }
-
         function loadSavedTextSize() {
             const saved = localStorage.getItem('chapterTextSize');
-            if (saved !== null) {
-                currentSizeLevel = parseInt(saved);
-                const content = document.getElementById('reading-content');
-                let size;
-                switch(currentSizeLevel) {
-                    case 0: size = '18px'; break;
-                    case 1: size = '20px'; break;
-                    case 2: size = '22px'; break;
-                }
-                content.style.setProperty('--reading-size', size);
-            }
+            if (saved !== null) { currentSizeLevel = parseInt(saved); document.getElementById('reading-content').style.setProperty('--reading-size', ['18px','20px','22px'][currentSizeLevel]); }
         }
-
         function toggleFocusMode() {
             document.body.classList.toggle('focus-mode');
-            const btns = document.querySelectorAll('.reader-controls button');
-            btns.forEach(btn => {
-                btn.style.opacity = document.body.classList.contains('focus-mode') ? '0.3' : '1';
-            });
+            const on = document.body.classList.contains('focus-mode');
+            document.querySelectorAll('.reader-controls button').forEach(b => b.style.opacity = on ? '0.3' : '1');
         }
-
         function initProgressBar() {
-            const progressBar = document.getElementById('progress-bar');
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
-            });
+            const bar = document.getElementById('progress-bar');
+            window.addEventListener('scroll', () => { const d = document.documentElement.scrollHeight - window.innerHeight; bar.style.width = Math.min((window.scrollY / d) * 100, 100) + '%'; });
         }
-
         function initKeyboardShortcuts() {
             document.addEventListener('keydown', (e) => {
                 if (e.key === '-' || e.key === '_') { e.preventDefault(); adjustTextSize(-1); }
@@ -207,13 +127,7 @@
                 if (e.key === 'Escape') { document.body.classList.remove('focus-mode'); }
             });
         }
-
-        window.onload = function() {
-            initTailwind();
-            loadSavedTextSize();
-            initProgressBar();
-            initKeyboardShortcuts();
-        };
+        window.onload = function() { initTailwind(); loadSavedTextSize(); initProgressBar(); initKeyboardShortcuts(); };
     </script>
 </body>
 </html>

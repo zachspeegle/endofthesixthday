@@ -40,6 +40,8 @@
             transform: translateY(-4px);
             box-shadow: 0 0 30px rgba(232, 185, 35, 0.15);
         }
+
+        .cosmic-bg { background: linear-gradient(180deg, #0A0F2E 0%, #0C2538 100%); }
     </style>
 </head>
 <body class="bg-[#0A0F2E] text-white">
@@ -109,6 +111,22 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Front Matter -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col md:col-span-2">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]/60">◈</div>
+                    <div>
+                        <div class="font-semibold text-xl">A Note to the Reader</div>
+                        <div class="text-xs text-white/50">FRONT MATTER</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">Before the journey begins — context, intention, and how to read this work.</p>
+                <a href="front-matter.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+
             <!-- Chapter 1 -->
             <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
                 <div class="flex items-center gap-x-4 mb-6">
@@ -119,11 +137,11 @@
                     </div>
                 </div>
                 <p class="text-white/80 flex-1">The moment you realize the simulation is not a metaphor — it’s the operating system of reality.</p>
-                <a href="chapter-1.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                <a href="chapter-01.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
                     Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
-            
+
             <!-- Chapter 2 -->
             <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
                 <div class="flex items-center gap-x-4 mb-6">
@@ -134,11 +152,11 @@
                     </div>
                 </div>
                 <p class="text-white/80 flex-1">Why mind is more fundamental than matter, and why this changes everything about who you are.</p>
-                <a href="chapter-2.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                <a href="chapter-02.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
                     Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
-            
+
             <!-- Chapter 3 -->
             <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
                 <div class="flex items-center gap-x-4 mb-6">
@@ -149,11 +167,11 @@
                     </div>
                 </div>
                 <p class="text-white/80 flex-1">How the Bible may be the original user manual for the system we’re living inside.</p>
-                <a href="chapter-3.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                <a href="chapter-03.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
                     Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
-            
+
             <!-- Chapter 4 -->
             <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
                 <div class="flex items-center gap-x-4 mb-6">
@@ -164,24 +182,26 @@
                     </div>
                 </div>
                 <p class="text-white/80 flex-1">Why things fall apart — and why the simulation seems designed to test and refine us.</p>
-                <a href="chapter-4.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                <a href="chapter-04.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
                     Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
-            
-            <!-- Chapter 5 - Coming Soon -->
-            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col opacity-75">
+
+            <!-- Chapter 5 -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
                 <div class="flex items-center gap-x-4 mb-6">
-                    <div class="text-4xl font-light text-white/40">05</div>
+                    <div class="text-4xl font-light text-[#E8B923]">05</div>
                     <div>
                         <div class="font-semibold text-xl">The Genesis Grid</div>
-                        <div class="text-xs text-white/50">COMING SOON</div>
+                        <div class="text-xs text-white/50">THE ARCHITECTURE</div>
                     </div>
                 </div>
-                <p class="text-white/60 flex-1">A deeper look at the structure of creation and the hidden architecture of reality. (Currently being refined)</p>
-                <div class="mt-8 text-white/40 text-sm">Release date: TBA</div>
+                <p class="text-white/80 flex-1">A deeper look at the structure of creation and the hidden architecture of reality.</p>
+                <a href="chapter-05.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
             </div>
-            
+
             <!-- Chapter 6 -->
             <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
                 <div class="flex items-center gap-x-4 mb-6">
@@ -192,11 +212,11 @@
                     </div>
                 </div>
                 <p class="text-white/80 flex-1">Where we are now — and why this moment in history feels different from every other.</p>
-                <a href="chapter-6.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                <a href="chapter-06.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
                     Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
-            
+
             <!-- Chapter 7 -->
             <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col">
                 <div class="flex items-center gap-x-4 mb-6">
@@ -207,10 +227,65 @@
                     </div>
                 </div>
                 <p class="text-white/80 flex-1">What comes after the sixth day — and the inheritance waiting for those who awaken.</p>
-                <a href="chapter-7.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                <a href="chapter-07.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
                     Read Chapter <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
                 </a>
             </div>
+
+            <!-- Chapter 8 — Coming Soon -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col opacity-60">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-white/30">08</div>
+                    <div>
+                        <div class="font-semibold text-xl text-white/60">Chapter 8</div>
+                        <div class="text-xs text-white/40">COMING SOON</div>
+                    </div>
+                </div>
+                <p class="text-white/40 flex-1">Content coming soon.</p>
+                <div class="mt-8 text-white/30 text-sm">Release date: TBA</div>
+            </div>
+
+            <!-- Chapter 9 — Coming Soon -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col opacity-60">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-white/30">09</div>
+                    <div>
+                        <div class="font-semibold text-xl text-white/60">Chapter 9</div>
+                        <div class="text-xs text-white/40">COMING SOON</div>
+                    </div>
+                </div>
+                <p class="text-white/40 flex-1">Content coming soon.</p>
+                <div class="mt-8 text-white/30 text-sm">Release date: TBA</div>
+            </div>
+
+            <!-- Chapter 10 — Coming Soon -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col opacity-60 md:col-span-2">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-white/30">10</div>
+                    <div>
+                        <div class="font-semibold text-xl text-white/60">Chapter 10</div>
+                        <div class="text-xs text-white/40">COMING SOON</div>
+                    </div>
+                </div>
+                <p class="text-white/40 flex-1">Content coming soon.</p>
+                <div class="mt-8 text-white/30 text-sm">Release date: TBA</div>
+            </div>
+
+            <!-- Back Matter -->
+            <div class="chapter-card glass rounded-3xl p-8 border border-white/10 flex flex-col md:col-span-2">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-4xl font-light text-[#E8B923]/60">◈</div>
+                    <div>
+                        <div class="font-semibold text-xl">References &amp; Acknowledgments</div>
+                        <div class="text-xs text-white/50">BACK MATTER</div>
+                    </div>
+                </div>
+                <p class="text-white/80 flex-1">Sources, gratitude, and further reading for those who want to go deeper.</p>
+                <a href="back-matter.html" class="mt-8 inline-flex items-center text-[#E8B923] font-medium group">
+                    Read <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+
         </div>
     </div>
 

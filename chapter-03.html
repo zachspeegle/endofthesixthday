@@ -10,6 +10,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap');
         :root { --reading-size: 20px; --line-height: 1.82; }
         body { font-family: 'Inter', system-ui, sans-serif; background-color: #0A0F2E; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
+        .glass { background: rgba(12, 37, 56, 0.72); backdrop-filter: blur(24px); }
         .reading-content { font-size: var(--reading-size); line-height: var(--line-height); color: #E2E8F0; max-width: 720px; margin: 0 auto; }
         .reading-content h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.65em; line-height: 1.3; color: #F1E7D2; margin-top: 2.2em; margin-bottom: 0.6em; }
         .reading-content p { margin-bottom: 1.35em; }
@@ -33,7 +35,7 @@
                 </a>
             </div>
             <div class="hidden md:block text-center">
-                <div class="text-sm font-medium text-white/90">Chapter 3 Title</div>
+                <div class="text-sm font-medium text-white/90">The Architecture of Scripture</div>
             </div>
             <div class="flex items-center gap-x-2 reader-controls">
                 <div class="flex items-center bg-white/5 rounded-2xl p-1 border border-white/10">
@@ -54,9 +56,24 @@
     <div class="pt-24 pb-20 px-6 max-w-[720px] mx-auto">
         <div class="mb-14 text-center">
             <div class="text-xs tracking-[3px] text-[#E8B923] mb-3">CHAPTER 03</div>
-            <h1 class="font-serif text-5xl md:text-6xl tracking-tighter">Chapter 3 Title</h1>
-            <p class="mt-4 text-xl text-white/70 max-w-md mx-auto">Chapter 3 subtitle or tagline.</p>
+            <h1 class="heading-serif text-5xl md:text-6xl tracking-tighter">The Architecture of Scripture</h1>
+            <p class="mt-4 text-xl text-white/70 max-w-md mx-auto">The original user manual.</p>
         </div>
+
+        <!-- ================================================================
+             CONTENT AREA — Chapter 3 | chapter-03.html
+             ================================================================
+             Paste your text below, replacing the placeholder <p> tag.
+             Supported elements:
+               Paragraph      → <p>Text here.</p>
+               Section header → <h2>Heading</h2>
+               Block quote    → <blockquote>Quote text<br>
+                                  <span class="text-sm not-italic">— Attribution</span>
+                                </blockquote>
+               Italic text    → <em>text</em>
+               Bold text      → <strong>text</strong>
+               Scene break    → <p class="text-center text-white/40">* * *</p>
+             ================================================================ -->
         <div class="reading-content" id="reading-content">
             <p>[ Chapter 3 content goes here. ]</p>
         </div>
