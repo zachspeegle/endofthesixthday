@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 01 • The End of the Sixth Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --reading-size: 20px;
+            --line-height: 1.82;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+            background-color: #0A0F2E;
+        }
+        
+        .reading-content {
+            font-size: var(--reading-size);
+            line-height: var(--line-height);
+            color: #E2E8F0;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        
+        .reading-content h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.65em;
+            line-height: 1.3;
+            color: #F1E7D2;
+            margin-top: 2.2em;
+            margin-bottom: 0.6em;
+        }
+        
+        .reading-content p {
+            margin-bottom: 1.35em;
+        }
+        
+        .reading-content blockquote {
+            border-left: 4px solid #E8B923;
+            padding-left: 1.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            color: #CBD5E1;
+        }
+        
+        .reader-controls {
+            transition: all 0.3s ease;
+        }
+        
+        .focus-mode .reader-controls,
+        .focus-mode nav,
+        .focus-mode footer {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .focus-mode .reading-content {
+            max-width: 780px;
+        }
+        
+        .progress-bar {
+            transition: width 0.1s ease-out;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- TOP BAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Left: Logo + Chapter -->
+            <div class="flex items-center gap-x-4">
+                <a href="book.html" class="flex items-center gap-x-3">
+                    <img src="assets/6thdaylogo2.jpg" alt="Logo" class="w-9 h-9 rounded-full ring-1 ring-white/20">
+                    <div class="hidden md:block">
+                        <div class="text-sm font-semibold">THE END OF THE SIXTH DAY</div>
+                        <div class="text-[10px] text-white/50 -mt-0.5">Chapter 01</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Center: Chapter Title -->
+            <div class="hidden md:block text-center">
+                <div class="text-sm font-medium text-white/90">Waking Up Inside the Code</div>
+            </div>
+
+            <!-- Right: Controls -->
+            <div class="flex items-center gap-x-2 reader-controls">
+                <!-- Text Size -->
+                <div class="flex items-center bg-white/5 rounded-2xl p-1 border border-white/10">
+                    <button onclick="adjustTextSize(-1)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-lg">A−</button>
+                    <button onclick="adjustTextSize(0)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-sm font-medium">A</button>
+                    <button onclick="adjustTextSize(1)" class="w-9 h-9 flex items-center justify-center hover:bg-white/10 rounded-xl transition text-lg">A+</button>
+                </div>
+
+                <!-- Focus Mode -->
+                <button onclick="toggleFocusMode()" 
+                        class="flex items-center gap-x-2 px-4 py-2 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm transition">
+                    <i class="fa-solid fa-expand mr-1.5"></i>
+                    <span class="hidden sm:inline">Focus</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="h-0.5 bg-white/10">
+            <div id="progress-bar" class="progress-bar h-0.5 bg-[#E8B923] w-0"></div>
+        </div>
+    </nav>
+
+    <!-- CHAPTER CONTENT -->
+    <div class="pt-24 pb-20 px-6 max-w-[720px] mx-auto">
+        
+        <!-- Chapter Header -->
+        <div class="mb-14 text-center">
+            <div class="text-xs tracking-[3px] text-[#E8B923] mb-3">CHAPTER 01</div>
+            <h1 class="heading-serif text-5xl md:text-6xl tracking-tighter">Waking Up Inside the Code</h1>
+            <p class="mt-4 text-xl text-white/70 max-w-md mx-auto">The moment everything changed.</p>
+        </div>
+
+        <!-- Body Content (Replace with real chapter text) -->
+        <div class="reading-content" id="reading-content">
+            <p>The first time it happened, I was sitting in my car at a red light. The world around me suddenly felt… thin. Like the fabric of reality had been stretched too far and I could almost see through it.</p>
+            
+            <p>I had been studying simulation theory for years, but this was different. This wasn’t an intellectual exercise. This was a direct, visceral knowing that the world I was looking at wasn’t the base layer of existence.</p>
+            
+            <h2>The Crack in the Simulation</h2>
+            
+            <p>It started with a simple question that refused to leave me alone: <em>What if consciousness isn’t something that emerges from the brain, but rather the brain is something that emerges from consciousness?</em></p>
+            
+            <p>Once that question took root, everything began to shift. The more I looked, the more I saw patterns — patterns that suggested the universe wasn’t a random accident, but a carefully constructed system designed for something far more profound than we had been taught.</p>
+            
+            <blockquote>
+                “We are not human beings having a spiritual experience. We are spiritual beings having a human experience.”<br>
+                <span class="text-sm not-italic">— Pierre Teilhard de Chardin</span>
+            </blockquote>
+            
+            <p>And then the Bible started speaking to me in a completely new way. Not as ancient mythology or rigid dogma, but as something much older and stranger — a structural document, a user manual written in the language of the system itself.</p>
+            
+            <h2>The Beginning of the End</h2>
+            
+            <p>This book is the result of that awakening. It is my attempt to articulate what I have come to understand about the nature of reality, the purpose of human consciousness, and the moment in history we are currently living through.</p>
+            
+            <p>We are standing at the threshold of something enormous. The sixth day is ending. The Sabbath is approaching. And whether we realize it or not, we are all being called to decide who we are going to be when the simulation finally reveals its true purpose.</p>
+            
+            <p class="text-center text-sm text-white/50 mt-12">— End of sample text —</p>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="border-t border-white/10 py-12">
+        <div class="max-w-[720px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-y-4 text-sm">
+            <a href="chapter-template.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Previous Chapter</span>
+            </a>
+            
+            <a href="book.html" class="px-6 py-2.5 rounded-2xl border border-white/20 hover:border-[#E8B923] text-white/80 hover:text-white transition flex items-center gap-x-2">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>Table of Contents</span>
+            </a>
+            
+            <a href="chapter-template.html" class="flex items-center gap-x-2 text-white/70 hover:text-white transition">
+                <span>Next Chapter</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <footer class="text-center py-8 text-xs text-white/40">
+        Free Browser Edition • The End of the Sixth Day © 2026 Zachary W. Speegle
+    </footer>
+
+    <script>
+        // Tailwind config
+        function initTailwind() {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: { gold: '#E8B923' }
+                    }
+                }
+            };
+        }
+
+        // Text Size Adjuster
+        let currentSizeLevel = 1; // 0 = small, 1 = medium, 2 = large
+
+        function adjustTextSize(direction) {
+            const content = document.getElementById('reading-content');
+            
+            if (direction === 0) {
+                currentSizeLevel = 1;
+            } else {
+                currentSizeLevel = Math.max(0, Math.min(2, currentSizeLevel + direction));
+            }
+            
+            let newSize;
+            switch(currentSizeLevel) {
+                case 0: newSize = '18px'; break;
+                case 1: newSize = '20px'; break;
+                case 2: newSize = '22px'; break;
+            }
+            
+            content.style.setProperty('--reading-size', newSize);
+            localStorage.setItem('chapterTextSize', currentSizeLevel);
+        }
+
+        function loadSavedTextSize() {
+            const saved = localStorage.getItem('chapterTextSize');
+            if (saved !== null) {
+                currentSizeLevel = parseInt(saved);
+                const content = document.getElementById('reading-content');
+                let size;
+                switch(currentSizeLevel) {
+                    case 0: size = '18px'; break;
+                    case 1: size = '20px'; break;
+                    case 2: size = '22px'; break;
+                }
+                content.style.setProperty('--reading-size', size);
+            }
+        }
+
+        // Focus Mode
+        function toggleFocusMode() {
+            document.body.classList.toggle('focus-mode');
+            
+            const btns = document.querySelectorAll('.reader-controls button');
+            btns.forEach(btn => {
+                if (document.body.classList.contains('focus-mode')) {
+                    btn.style.opacity = '0.3';
+                } else {
+                    btn.style.opacity = '1';
+                }
+            });
+        }
+
+        // Scroll Progress Bar
+        function initProgressBar() {
+            const progressBar = document.getElementById('progress-bar');
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                
+                progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+            });
+        }
+
+        // Keyboard shortcuts
+        function initKeyboardShortcuts() {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === '-' || e.key === '_') {
+                    e.preventDefault();
+                    adjustTextSize(-1);
+                }
+                if (e.key === '+' || e.key === '=') {
+                    e.preventDefault();
+                    adjustTextSize(1);
+                }
+                if (e.key.toLowerCase() === 'f') {
+                    e.preventDefault();
+                    toggleFocusMode();
+                }
+                if (e.key === 'Escape') {
+                    document.body.classList.remove('focus-mode');
+                }
+            });
+        }
+
+        function initialize() {
+            initTailwind();
+            loadSavedTextSize();
+            initProgressBar();
+            initKeyboardShortcuts();
+            
+            // Welcome toast (remove after first use if desired)
+            setTimeout(() => {
+                console.log('%c[Chapter Reader] Ready. Use A−/A/A+ or press +/- keys. Press F for Focus Mode.', 'color:#E8B923');
+            }, 1200);
+        }
+
+        window.onload = initialize;
+    </script>
+</body>
+</html>
